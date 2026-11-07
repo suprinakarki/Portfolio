@@ -1,0 +1,41 @@
+{
+    "name": "suprina-portfolio",
+    "private": true,
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite --host 127.0.0.1",
+        "build": "vite build",
+        "preview": "vite preview --host 127.0.0.1",
+        "lint": "eslint .",
+        "test": "playwright test"
+    },
+    "dependencies": {
+        "@emailjs/browser": "^5.0.3",
+        "@fontsource/inter": "^5.3.0",
+        "@fontsource/manrope": "^5.3.0",
+        "lucide-react": "^1.70.0",
+        "motion": "^14.10.1",
+        "react": "^19.3.1",
+        "react-dom": "^19.3.1",
+        "react-hook-form": "^7.91.0"
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@playwright/test": "^1.65.0",
+        "@tailwindcss/vite": "^4.3.5",
+        "@vitejs/plugin-react": "^6.2.1",
+        "eslint": "^10.14.0",
+        "eslint-plugin-react-hooks": "^7.1.1",
+        "eslint-plugin-react-refresh": "^0.5.7",
+        "globals": "^17.14.0",
+        "tailwindcss": "^4.3.5",
+        "vite": "^8.3.6"
+    },
+    "engines": {
+        "node": ">=22.12.0"
+    },
+    "overrides": {
+        "minimatch": "^11.0.1"
+    }
+}

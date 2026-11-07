@@ -1,0 +1,17 @@
+import { Code2, PanelsTopLeft, Server, Database, Terminal, ArrowUpRight, GraduationCap } from 'lucide-react';
+import { portfolio } from '../data/portfolio';
+import { Reveal, SectionHeading, ProjectCard } from '../components/UI';
+const icons = { code: Code2, layout: PanelsTopLeft, server: Server, database: Database, terminal: Terminal };
+export function About() {
+  return <section id="about" tabIndex={-1} className="section container about-grid reference-about"><Reveal className="about-portrait"><div className="about-photo-frame">{portfolio.profileImage ? <img className="about-photo" src={portfolio.profileImage} alt={portfolio.name} width="480" height="600" loading="lazy"/> : <div className="about-monogram">{portfolio.initials}</div>}</div><p className="about-photo-caption"><span>{portfolio.name}</span>{portfolio.status}</p></Reveal><Reveal className="about-copy"><SectionHeading number="01" eyebrow="THE PERSON BEHIND THE CODE" title="About Me"/><p className="about-hello">Hey there,</p>{portfolio.about.map(p => <p key={p}>{p}</p>)}<div className="about-facts"><div><small>BASED IN</small><span>{portfolio.location}</span></div><div><small>FOCUSED ON</small><span>{portfolio.interest}</span></div></div></Reveal></section>;
+}
+export function Skills() {
+  return <section id="skills" tabIndex={-1} className="section tinted"><div className="container"><Reveal><SectionHeading number="02" eyebrow="MY TOOLKIT" title="The tools behind the ideas." description="Technologies I work with as I continue learning and building."/></Reveal><div className="skills-grid">{portfolio.skills.filter(group => group.confirmed.length).map(group => { const Icon = icons[group.icon]; return <Reveal key={group.category} className="skill-card"><div className="skill-heading"><Icon size={22}/><h3>{group.category}</h3></div><div className="skill-list">{group.confirmed.map(skill => <span key={skill}><span className="skill-symbol">{({ JavaScript: 'JS', PHP: 'php', 'C#': 'C#', React: '◎', 'Next.js': 'N' })[skill] || skill.slice(0, 2)}</span>{skill}</span>)}</div></Reveal>; })}</div><p className="skills-note"><span/> An evolving toolkit, shaped by hands-on learning.</p></div></section>;
+}
+export function Projects() {
+  return <section id="projects" tabIndex={-1} className="section container"><Reveal className="heading-row"><SectionHeading number="03" eyebrow="SELECTED WORK" title="From learning to building." description="A space for my projects and the ideas behind them."/><a className="text-link" href={portfolio.github} target="_blank" rel="noreferrer">Explore GitHub <ArrowUpRight size={17}/></a></Reveal><div className="projects-grid">{portfolio.projects.map((project, index) => <Reveal key={project.name}><ProjectCard project={project} index={index}/></Reveal>)}</div></section>;
+}
+export function Education() {
+  const e = portfolio.education;
+  return <section id="education" tabIndex={-1} className="section container education-grid"><Reveal><SectionHeading number="04" eyebrow="THE FOUNDATION" title="Learning with purpose."/><p className="section-description">Building a foundation in computer science, one semester at a time.</p></Reveal><Reveal className="education-card"><div className="education-top"><span className="education-icon"><GraduationCap size={25}/></span><span className="tag">{e.start} — {e.end || 'Present'}</span></div><h3>{e.degree} <span>({e.abbreviation})</span></h3><p className="college">{e.college}</p><p className="university">{e.university}</p><div className="education-rule"/><p>{e.description}</p></Reveal></section>;
+}
