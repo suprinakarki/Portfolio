@@ -10,7 +10,6 @@ export default function Hero() {
       <Reveal className="hero-copy">
         <p className="hero-title">{portfolio.title}</p>
         <h1>Hi, I’m <span className="hero-name">{firstName}</span>{' '}<br />{lastName.join(' ')} from {city}<span className="hero-dot">.</span></h1>
-        <p className="hero-description">{portfolio.intro}</p>
         <div className="hero-buttons">
           <a className="button primary" href="#projects">View My Work <ArrowUpRight size={18} /></a>
           {portfolio.resume ? <a className="button secondary" href={portfolio.resume} download><Download size={17} /> Download Resume</a> : <span className="resume-placeholder"><Download size={16} /> Resume coming soon</span>}

@@ -5,8 +5,8 @@ import { portfolio } from '../data/portfolio';
 export function Reveal({ children, className = '' }) {
   return <motion.div className={className} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.08 }} transition={{ duration: 0.45 }}>{children}</motion.div>;
 }
-export function SectionHeading({ number, eyebrow, title, description }) {
-  return <div className="section-heading"><p className="eyebrow"><span>{number} /</span> {eyebrow}</p><h2>{title}</h2>{description && <p className="section-description">{description}</p>}</div>;
+export function SectionHeading({ title, description }) {
+  return <div className="section-heading"><h2>{title}</h2>{description && <p className="section-description">{description}</p>}</div>;
 }
 export function Socials() {
   return <div className="socials"><a href={portfolio.github} target="_blank" rel="noreferrer" aria-label="Suprina on GitHub"><Github size={19}/></a>{portfolio.linkedin ? <a href={portfolio.linkedin} target="_blank" rel="noreferrer" aria-label="Suprina on LinkedIn"><Linkedin size={19}/></a> : <span className="unavailable-social" aria-label="LinkedIn profile not added" title="LinkedIn profile not added"><Linkedin size={19}/><span className="sr-only">LinkedIn coming soon</span></span>}</div>;

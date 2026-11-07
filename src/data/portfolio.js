@@ -5,10 +5,9 @@ export const portfolio = {
   seoDescription: 'Suprina Karki — Full Stack Developer and BSc CSIT student based in Kathmandu, Nepal. Explore my skills, projects, and journey in software development.',
   github: 'https://github.com/suprinakarki', linkedin: null, email: null, resume: null, profileImage: '/images/suprina-karki.jpeg',
   about: [
-    "I'm Suprina Karki, currently pursuing my BSc CSIT at New Summit College, affiliated with Tribhuvan University.",
-    'My interest lies in full-stack web development, where I enjoy learning how frontend interfaces and backend systems work together to create useful applications.',
-    'I work with technologies such as JavaScript, React, Next.js, PHP, and C#, and I continue developing my abilities through academic learning and hands-on projects.',
-    "I'm interested in opportunities that allow me to strengthen my technical skills, collaborate with developers, and contribute to meaningful software solutions.",
+    "I'm Suprina Karki, a BSc CSIT student at New Summit College, affiliated with Tribhuvan University. I'm curious about how technology works and always looking for something new to learn.",
+    "I'm especially interested in full stack development. I enjoy exploring how the front end and back end fit together, and learning by building projects along the way. So far, I've been working with JavaScript, React, Next.js, PHP, and C#.",
+    "I'm still growing as a developer, and I'm excited to keep improving, take on new challenges, and contribute to useful software. Let's connect and learn together!",
   ],
   skills: [
     { category: 'Programming Languages', icon: 'code', confirmed: ['JavaScript', 'PHP', 'C#'], unconfirmed: [] },
