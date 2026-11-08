@@ -12,7 +12,17 @@ export function Socials() {
   return <div className="socials"><a href={portfolio.github} target="_blank" rel="noreferrer" aria-label="Suprina on GitHub"><Github size={19}/></a>{portfolio.linkedin ? <a href={portfolio.linkedin} target="_blank" rel="noreferrer" aria-label="Suprina on LinkedIn"><Linkedin size={19}/></a> : <span className="unavailable-social" aria-label="LinkedIn profile not added" title="LinkedIn profile not added"><Linkedin size={19}/><span className="sr-only">LinkedIn coming soon</span></span>}</div>;
 }
 export function ProjectCard({ project, index }) {
-  return <motion.article className="project-card" whileHover={{ y: -4 }} transition={{ duration: 0.2 }}><div className={`project-preview preview-${index}`}>
-    {project.image ? <img src={project.image} alt={project.imageAlt || `${project.name} screenshot`} loading="lazy" width="640" height="400"/> : <><div className="preview-top"><span>{String(index + 1).padStart(2, '0')} / SELECTED PROJECT</span><ArrowUpRight size={18}/></div><span className="project-monogram">{project.monogram}<span>.</span></span><span className="preview-caption">PROJECT PREVIEW COMING SOON</span></>}
-    </div><div className="project-content"><div className="project-title"><h3>{project.name}</h3><span className="tag">{project.verified ? 'Project' : 'Details pending'}</span></div><p>{project.description}</p>{project.technologies.length > 0 && <div className="tags">{project.technologies.map(t => <span className="tag" key={t}>{t}</span>)}</div>}<div className="project-links"><a href={project.repository} target="_blank" rel="noreferrer"><Github size={17}/> View repository <ArrowUpRight size={16}/></a>{project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noreferrer">Live demo <ArrowUpRight size={16}/></a>}</div>{!project.verified && <small>Repository access is currently unverified.</small>}</div></motion.article>;
+  return (
+    <article className="project-card project-image-card">
+      <a className={`project-preview preview-${index}`} href={project.repository} target="_blank" rel="noreferrer" aria-label={`View ${project.name} code on GitHub (opens in a new tab)`}>
+        {project.image ? <img src={project.image} alt={project.imageAlt || `${project.name} project cover`} loading="lazy" width="1448" height="1086"/> : <span className="project-monogram">{project.monogram}</span>}
+        <div className="project-hover-details">
+          <h3>{project.name}</h3>
+          <p>{project.description}</p>
+          {project.verified && project.technologies.length > 0 && <p>{project.technologies.join(' · ')}</p>}
+          <span className="project-hover-link">View Code <ArrowUpRight size={17}/></span>
+        </div>
+      </a>
+    </article>
+  );
 }

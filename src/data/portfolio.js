@@ -12,13 +12,13 @@ export const portfolio = {
   skills: [
     { category: 'Programming Languages', icon: 'code', confirmed: ['JavaScript', 'PHP', 'C#'], unconfirmed: [] },
     { category: 'Frontend Development', icon: 'layout', confirmed: ['React', 'Next.js'], unconfirmed: ['HTML5', 'CSS3', 'Tailwind CSS'] },
-    { category: 'Backend Development', icon: 'server', confirmed: [], unconfirmed: ['Node.js', 'Express.js', 'REST APIs', 'Authentication and Authorization'] },
+    { category: 'Backend Development', icon: 'server', confirmed: ['Node.js'], unconfirmed: ['Express.js', 'REST APIs', 'Authentication and Authorization'] },
     { category: 'Databases', icon: 'database', confirmed: [], unconfirmed: ['SQL Server', 'MongoDB'] },
     { category: 'Developer Tools', icon: 'terminal', confirmed: [], unconfirmed: ['Git', 'GitHub', 'VS Code', 'Postman'] },
   ],
   projects: [
-    { name: 'GiftCraft', monogram: 'Gc', repository: 'https://github.com/suprinakarki/GiftCraft', description: 'Project details are being prepared. A verified overview will be added here soon.', technologies: [], image: null, imageAlt: '', liveUrl: null, verified: false, verificationNote: 'Repository unavailable at the supplied path when checked on 2026-11-07.' },
-    { name: 'ProjectMate', monogram: 'Pm', repository: 'https://github.com/suprinakarki/ProjectMate', description: 'Project details are being prepared. A verified overview will be added here soon.', technologies: [], image: null, imageAlt: '', liveUrl: null, verified: false, verificationNote: 'Repository unavailable at the supplied path when checked on 2026-11-07.' },
+    { name: 'GiftCraft', monogram: 'Gc', repository: 'https://github.com/suprinakarki/GiftCraft.git', description: 'A web-based gifting platform designed to help users explore and purchase gifts through a convenient online experience.', descriptionSource: 'Provided by the user', technologies: [], image: '/images/giftcraft.png', imageAlt: 'GiftCraft illustrated project cover with gifts and a laptop', liveUrl: null, verified: false, verificationNote: 'Description supplied by the user; repository access remains unverified.' },
+    { name: 'ProjectMate', monogram: 'Pm', repository: 'https://github.com/suprinakarki/GiftCraft.git', description: 'A project management web application designed to help users organize projects, manage tasks, and collaborate efficiently.', descriptionSource: 'Provided by the user', technologies: [], image: '/images/projectmate.png', imageAlt: 'ProjectMate illustrated project cover with a laptop and code symbols', liveUrl: null, verified: false, verificationNote: 'Description and GiftCraft repository link supplied by the user; repository access remains unverified.' },
   ],
   education: { degree: 'Bachelor of Science in Computer Science and Information Technology', abbreviation: 'BSc CSIT', college: 'New Summit College', university: 'Tribhuvan University', start: 2023, end: null, description: 'Currently pursuing undergraduate studies in computer science and information technology, with an interest in software development and modern web technologies.' },
   contactMessage: "I'm interested in opportunities to learn, collaborate, and contribute to meaningful software projects. Feel free to reach out.",
