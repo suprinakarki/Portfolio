@@ -14,7 +14,7 @@ export default function Contact() {
     if (!configured) { setFeedback({ type: 'error', text: 'Email delivery is not configured yet. Your message has not been sent.' }); return; }
     try {
       const { default: emailjs } = await import('@emailjs/browser');
-      await emailjs.send(settings.service, settings.template, { from_name: data.name.trim(), reply_to: data.email.trim(), message: data.message.trim() }, { publicKey: settings.key, limitRate: { id: 'portfolio-contact', throttle: 60000 } });
+      await emailjs.send(settings.service, settings.template, { from_name: data.name.trim(), from_email: data.email.trim(), reply_to: data.email.trim(), message: data.message.trim() }, { publicKey: settings.key, limitRate: { id: 'portfolio-contact', throttle: 60000 } });
       setFeedback({ type: 'success', text: 'Your message was sent successfully. Thank you for reaching out!' }); reset();
     } catch { setFeedback({ type: 'error', text: 'Your message could not be sent. Please try again later.' }); }
   };
